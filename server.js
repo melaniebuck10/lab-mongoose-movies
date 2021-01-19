@@ -1,4 +1,6 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const mongoose = require('mongoose');
 const app = require('./app');
@@ -10,7 +12,8 @@ mongoose
   .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false
+    useFindAndModify: false,
+    useCreateIndex: true
   })
   .then(() => {
     console.log('Mongoose connection established.');
