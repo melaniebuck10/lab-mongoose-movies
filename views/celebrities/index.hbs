@@ -1,7 +1,11 @@
 <h2>Please find below all celebrities</h2><br>
+
 {{#each celebrities }}
 <a href="/celebrities/{{_id}}">{{ name }} </a> <br><br>
-<form action="celebrities/{{celebrity_id}}/delete" method="POST"></form>
+<form action="celebrities/{{_id}}/delete" method="POST"> <button>Delete</button></form>
+ <form action="celebrities/{{_id}}/edit" method="GET">
+    <button>Edit</button>
+    </form>
 {{/each}}
 
 
